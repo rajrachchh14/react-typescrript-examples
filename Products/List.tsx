@@ -16,7 +16,7 @@ function List() {
   const [ArrayProduct, SetProductArray] = useState([]);
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products`).then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       SetProductArray(res.data);
     });
   });
