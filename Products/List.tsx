@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import axios from 'axios';
-import { Row, Col, Card } from 'antd';
+import { Row, Col, Card, Button } from 'antd';
 
 export type CartItemType = {
   id: number;
@@ -16,7 +16,7 @@ function List() {
   const [ArrayProduct, SetProductArray] = useState([]);
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products`).then((res) => {
-      // console.log(res.data);
+      console.log(res.data);
       SetProductArray(res.data);
     });
   });
@@ -25,13 +25,18 @@ function List() {
     <div>
       <div className="site-card-wrapper">
         <Row gutter={24}>
-          {ArrayProduct.map((data) => {
+          {ArrayProduct.map((data, index) => {
             return (
-              <Col span={8}>
-                <Card title={data.title} bordered={false}>
+              <Col span={8} key={index}>
+                <Card title={data.title} bordered={true}>
                   <b> ID : </b> {data.id}
                   <br />
                   <b> Price : </b> {data.price}
+                  <br />
+                  <Button type="primary">Add To Cart</Button>
+                  <Button type="link" danger>
+                    Detail
+                  </Button>
                 </Card>
               </Col>
             );
