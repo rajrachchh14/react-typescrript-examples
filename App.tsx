@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import List from './Products/List';
-
+// import List from './Products/List';
+import List from './Examples/List';
 import { Layout, Menu } from 'antd';
 import SiteLayout from './Component/Reusable/SiteLayout';
 const { Header, Content, Footer } = Layout;
