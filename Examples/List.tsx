@@ -2,19 +2,30 @@ import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 
 interface InvoiceInterFace {
-  customer: string;
+  objInvoice: {
+    customer: string;
+    invoicesData: { id: number; product: string; price: string }[];
+  };
 
-  invoices: [id: number, product: string, price: string];
+  logo?: string;
 }
 
-const InvoiceList = () => {
-  return <div>datq</div>;
-};
+// props: InvoiceInterFace
+function InvoiceList(props: InvoiceInterFace) {
+  return (
+    // <React.Fragement>
+    <div>
+      <b> Customer Name </b> :: {props.MyData.customer}
+      {/* {console.log(props.MyData.customer)} */}
+    </div>
+    // </React.Fragement>.
+  );
+}
 
 function List() {
   const data = {
     customer: 'Mike',
-    invoices: [
+    invoicesData: [
       {
         id: 1,
         product: 'apple',
