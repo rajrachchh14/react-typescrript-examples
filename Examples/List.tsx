@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Layout, Menu } from 'antd';
 
 interface InvoiceInterFace {
-  objInvoice: {
+  myData: {
     customer: string;
     invoicesData: { id: number; product: string; price: string }[];
   };
@@ -10,15 +10,12 @@ interface InvoiceInterFace {
   logo?: string;
 }
 
-// props: InvoiceInterFace
 function InvoiceList(props: InvoiceInterFace) {
   return (
-    // <React.Fragement>
     <div>
-      <b> Customer Name </b> :: {props.MyData.customer}
-      {/* {console.log(props.MyData.customer)} */}
+      <b> Customer Name </b> ::{props.myData.customer}
+      {/* {console.log(props.myData.customer)} */}
     </div>
-    // </React.Fragement>.
   );
 }
 
@@ -41,7 +38,7 @@ function List() {
 
   return (
     <div>
-      <InvoiceList MyData={data} />
+      <InvoiceList myData={data} />
     </div>
   );
 }
